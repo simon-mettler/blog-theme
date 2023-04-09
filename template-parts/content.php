@@ -19,15 +19,17 @@
 		<?php
 		if ( is_singular() ) { 
 			the_title( '<h1 class="entry-title">', '</h1>' );
+			echo '<div class="post-meta">';
 			simon_blog_posted_on();
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'simon-blog' ) );
 			if ( $tags_list && is_singular()) {
 				printf( '  |  <span class="tags-links">' . esc_html__( 'Tags: %1$s', 'simon-blog' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
+			echo '</div>';
 		}else {
 			echo '<a class="blog-list" href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 			simon_blog_posted_on();
-			the_title( ' <span class="entry-title">', '</span>' );
+			the_title( ' | <span class="entry-title">', '</span>' );
 			echo '</a>';}
 		?>
 	</header><!-- .entry-header -->
