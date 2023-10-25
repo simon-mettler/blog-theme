@@ -939,6 +939,7 @@ code {
 .bottom-shield {
   width: 100%;
   background-color: white;
+	z-index: 10;
 }
 
 .top-shield {
@@ -1042,6 +1043,7 @@ hr.wp-block-separator {
 	}
 
 	main,
+	.site-branding,
 	.collection main {
 		margin: 94px 25px;
 	}
@@ -1142,3 +1144,28 @@ a[data-type="post"]:after {
 	padding-left: 16px;
 	margin-top: 50px;
 }
+
+.chart-wide {
+	width: 175%;
+	transform: translateX(-20%);
+}
+
+@media screen and ( max-width: 1230px ) {
+	.chart-wide {
+		width: 100%;
+		transform: none;
+	}	
+}
+
+.chart-400 {
+	height: 400px;
+}
+
+.chart-500 {
+	height: 500px;
+}
+
+.chart-600 {
+	height: 600px;
+}
+
